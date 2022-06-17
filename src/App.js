@@ -31,23 +31,23 @@ function deleteItems (id) {
 
     return (
         <div className="App">
-            <h1>To-do List</h1>
-            <input type="text" placeholder="Add an item"
+            <h1>Recat To-do List</h1>
+            <input className="input" type="text" placeholder="Add an item"
             value={newItem}
             onChange = {e => setNewItem(e.target.value)}
             />
-            <button onClick={() => addItem()}>Add</button>
+            <button id="add" onClick={() => addItem()} >Add</button>
 
-            <ul>
+            <ol>
                 {items.map(item => {
                     return (
                         <li key = {item.id}>{item.value} 
-                        <button onClick={() => deleteItems(item.id)}>Delete</button>
+                        <button id="delete" onClick={() => deleteItems(item.id)} >Delete</button>
                          </li>
                       
                     )
                 })}
-            </ul>
+            </ol>
         </div>
     )
 }
